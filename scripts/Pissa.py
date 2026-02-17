@@ -60,7 +60,7 @@ class Pissa(nn.Module):
 
 
 
-def Pissa_injection(model, rank):
+def Pissa_injection(model, rank,device):
 
   trgts = []
 
@@ -101,13 +101,13 @@ def Pissa_injection(model, rank):
       setattr(model, child_module_name,pissa_layer)
 
 
-def apply_Pissa(model, rank: int, Pissa: bool):
+def apply_Pissa(model, rank: int, use_pissa: bool, device):
 
     if Pissa:
       for p in model.parameters():
         p.requires_grad =False
 
-      Pissa_injection(model, rank=rank)
+      Pissa_injection(model, rank, device)
 
       trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
       print(f"Trainable parameters count: {trainable_params}")
