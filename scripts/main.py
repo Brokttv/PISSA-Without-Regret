@@ -41,7 +41,7 @@ def main():
         model.to(device)
         
         use_pissa = not args.full_finetune
-        trainable_params = setup_model(model, use_pissa, args.rank, device)
+        trainable_params = setup_model(model,args.rank, use_pissa, device)
         
         optimizer = torch.optim.AdamW(trainable_params, lr=lr, weight_decay=0.001, betas=(0.9, 0.999))
         
