@@ -60,7 +60,7 @@ class Pissa(nn.Module):
 
 
 
-def Pissa_injection(model, rank,device):
+def Pissa_injection(model, rank, device):
 
   trgts = []
 
