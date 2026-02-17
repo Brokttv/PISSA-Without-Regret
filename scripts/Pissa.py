@@ -101,7 +101,7 @@ def Pissa_injection(model, rank, device):
       setattr(model, child_module_name,pissa_layer)
 
 
-def apply_Pissa(model, rank: int, use_pissa: bool, device):
+def setup_model(model, rank: int, use_pissa: bool, device):
 
     if Pissa:
       for p in model.parameters():
