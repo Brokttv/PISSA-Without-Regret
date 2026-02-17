@@ -3,7 +3,7 @@ import torch
 from transformers import DistilBertForSequenceClassification
 import json
 
-from lora import setup_model
+from Pissa import setup_model
 from data import get_dataloaders
 from train import train, val, test
 from utils import set_seed
@@ -40,8 +40,8 @@ def main():
         model = DistilBertForSequenceClassification.from_pretrained("distilbert-base-uncased", num_labels=4)
         model.to(device)
         
-        use_lora = not args.full_finetune
-        trainable_params = setup_model(model, use_lora, args.rank, args.alpha, device)
+        use_pissa = not args.full_finetune
+        trainable_params = setup_model(model, use_pissa, args.rank, device)
         
         optimizer = torch.optim.AdamW(trainable_params, lr=lr, weight_decay=0.001, betas=(0.9, 0.999))
         
