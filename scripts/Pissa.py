@@ -100,3 +100,25 @@ def Pissa_injection(model, rank):
     else:
       setattr(model, child_module_name,pissa_layer)
 
+
+def apply_Pissa(model, rank: int, Pissa: bool):
+
+    if Pissa:
+      for p in model.parameters():
+        p.requires_grad =False
+
+      Pissa_injection(model, rank=rank)
+
+      trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+      print(f"Trainable parameters count: {trainable_params}")
+
+      params = filter(lambda p: p.requires_grad, model.parameters())
+
+    else:
+        trainable_params = sum(p.numel() for p in model.parameters())
+        print(f"Trainable parameters count: {trainable_params}")
+
+        params = model.parameters()
+
+    return params
+
