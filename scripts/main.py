@@ -14,9 +14,9 @@ def main():
     parser.add_argument('--lrs', type=float, nargs='+', default=[1e-4, 5e-4, 1e-3], 
                         help='Learning rates to sweep (default: 1e-4 5e-4 1e-3)')
     parser.add_argument('--epochs', type=int, default=5, help='Number of epochs')
-    parser.add_argument('--rank', type=int, default=128, help='LoRA rank')
+    parser.add_argument('--rank', type=int, default=128, help='PISSA rank')
     parser.add_argument('--batch_size', type=int, default=32, help= 'batch size')
-    parser.add_argument('--full-finetune', action='store_true', help='Use full fine-tuning instead of LoRA')
+    parser.add_argument('--full-finetune', action='store_true', help='Use full fine-tuning instead of PISSA')
     parser.add_argument('--seed', type=int, default=42, help='Random seed')
     
     args = parser.parse_args()
