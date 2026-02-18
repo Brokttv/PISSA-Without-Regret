@@ -17,10 +17,17 @@ We use similar setup to our Lora-without-regret one using:
    <br>
   
 <p align="center">
-  <img src="assets/pissa" width="700"/>
+  <img src="assets/pissa1" width="700"/>
 </p>
 <br>
 
-Here is the FullFT plot:
+We observe that the optimal LR is only **3 times** bigger than FullFT optimal LR and that accuracy increases by rank.
+Based on LoRA results shared in previous work, we provide the following cvcomparaison table:
+   <br>
+  
+<p align="center">
+  <img src="assets/pic.jpeg" width="800"/>
+</p>
+<br>
 
 
