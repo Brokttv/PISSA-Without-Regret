@@ -17,6 +17,6 @@ We use similar setup to our Lora-without-regret one using:
    <br>
   
 <p align="center">
-  <img src="assets/normal-lora-bert" width="750"/>
+  <img src="assets/pissa" width="700"/>
 </p>
 <br>
